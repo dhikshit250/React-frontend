@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FiEdit3 } from "react-icons/fi";
+import { FiEdit2, FiEdit3 } from "react-icons/fi";
 import "../Styles/profilec.css";
 
 function Profile() {
@@ -53,41 +53,52 @@ function Profile() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Clear session storage
+    window.location.href = "/login"; 
+  };
+
   return (
     <div className="profile-container">
       <header>
         <div className="profile-pic-container">
           <img src={user.profile_pic || "default-profile.png"} alt="Profile" className="profile-pic" />
           <label htmlFor="profile-upload" className="edit-icon">
-            <FiEdit3 size={20} />
+            <FiEdit2 size={20} />
           </label>
           <input id="profile-upload" type="file" accept="image/*" hidden onChange={handleFileChange} />
         </div>
-        <div className="username-container">
+        
+        <div className="username-box">
           {editing.username ? (
             <input type="text" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} />
           ) : (
             <h1>{user.username}</h1>
           )}
-          <FiEdit3 size={20} onClick={() => setEditing({ ...editing, username: true })} />
+          <FiEdit2 size={20} className="edit-icon" onClick={() => setEditing({ ...editing, username: true })} />
         </div>
       </header>
 
+
+      <h2 className="abb">About Me</h2>
       <section className="bio-section">
-        <div className="bio-header">
-          <h2>About Me</h2>
-          <FiEdit3 size={20} onClick={() => setEditing({ ...editing, bio: true })} />
+        <div className="bio-box">
+          <div className="bio-header">
+            <FiEdit3 size={20} className="edit-icon" onClick={() => setEditing({ ...editing, bio: true })} />
+          </div>
+          {editing.bio ? (
+            <textarea value={newBio} onChange={(e) => setNewBio(e.target.value)} />
+          ) : (
+            <p>{user.bio || "This is my bio!"}</p>
+          )}
         </div>
-        {editing.bio ? (
-          <textarea value={newBio} onChange={(e) => setNewBio(e.target.value)} />
-        ) : (
-          <p>{user.bio || "This is my bio!"}</p>
-        )}
       </section>
 
       {(editing.username || editing.bio) && (
         <button onClick={handleProfileUpdate} className="save-button">Save</button>
       )}
+
+      <button onClick={handleLogout} className="logout-button">Logout</button>
     </div>
   );
 }

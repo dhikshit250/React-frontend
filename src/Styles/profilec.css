@@ -3,7 +3,7 @@
   width: 90%;
   max-width: 900px;
   padding: 40px;
-  background: linear-gradient(200deg, #1c1b1b, #007a99);
+  background: #161B22;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -148,20 +148,45 @@
 .save-button {
   margin-top: 20px;
   padding: 14px 22px;
-  background: linear-gradient(45deg, #1db954, #1ed760);
+  background:  #2769cc;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
+  width: 15%;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background 0.3s;
 }
 
 .save-button:hover {
-  background: linear-gradient(45deg, #17a34a, #18c354);
+  background:  #2769ccc4;
   transform: scale(1.05);
 }
+
+.logout-button {
+  background-color: #2769cc;
+  color: white;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 15%;
+  margin-top: 20px;
+}
+
+.logout-button:hover {
+  background-color: #2769ccc4;
+  transform: scale(1.05);
+
+}
+
+.abb{
+margin-bottom: 0%;
+color: white;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
