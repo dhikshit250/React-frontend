@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c5a3fd34.css",
+    "main.js": "/static/js/main.e737c104.js",
+    "static/js/453.bb828c5d.chunk.js": "/static/js/453.bb828c5d.chunk.js",
+    "static/media/walli1.jpeg": "/static/media/walli1.dbf33ad0e144b29b9f14.jpeg",
+    "index.html": "/index.html",
+    "main.c5a3fd34.css.map": "/static/css/main.c5a3fd34.css.map",
+    "main.e737c104.js.map": "/static/js/main.e737c104.js.map",
+    "453.bb828c5d.chunk.js.map": "/static/js/453.bb828c5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5a3fd34.css",
+    "static/js/main.e737c104.js"
+  ]
+}
